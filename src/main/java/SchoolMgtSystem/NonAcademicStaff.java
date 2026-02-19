@@ -2,9 +2,9 @@ package SchoolMgtSystem;
 
 // Non-Academic staff handles all admin's duties
 
-public class NonAcademic extends Staff {
+public class NonAcademicStaff extends Staff {
 
-    public NonAcademic(String name, int age, int id) {
+    public NonAcademicStaff(String name, int age, int id) {
         super(name, age, id);
     }
 

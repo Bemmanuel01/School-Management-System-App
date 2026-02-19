@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -13,10 +11,14 @@ public class Main {
 
         Principal principal = new Principal("Mr Benjamine", 42, 1);
         Teacher teacher = new Teacher("Mr Manuel", 42, 2);
+        NonAcademicStaff admin = new NonAcademicStaff("Mrs Ella", 36, 4);
+
+        SchoolClass basicClass = new SchoolClass("Basic Class");
+
 
         List<Student> students = new ArrayList<>();
 
-        int choice = 0;
+        int choice;
 
         do{
             System.out.println("\n=== SCHOOL MANAGEMENT SYSTEM ===");
@@ -109,10 +111,27 @@ public class Main {
 
                     for (Student s : students) {
                         if (s.getId() == assignId) {
-                            admin.assignStudentToClass(s, primaryOne);
+                            admin.assignStudentToClass(s, basicClass);
                         }
                     }
                     break;
+
+                case 7:
+                    basicClass.displayStudents();
+                    break;
+
+                case 8:
+                    System.out.println("Enter Announcement: ");
+                    String message = scanner.nextLine();
+                    admin.makeAnnouncement(message);
+                    break;
+
+                case 9:
+                    System.out.println("You are exiting...");
+                    break;
+
+                default:
+                    System.out.println("Invalid Option.!");
             }
 
         } while (choice != 9);
