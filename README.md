@@ -1,18 +1,20 @@
 ## SCHOOL MANAGEMENT SYSTEM
 
-- A console-based School Management System built using Object-Oriented Programming (OOP) principles in Java.
+# Project Description
 
-This project models a basic school structure including staff roles, students, applicants, courses, and classes.
+The School Management System is a console-based Java application built using Object-Oriented Programming (OOP) principles.
 
-# Features
-- Applicant admission (age-based validation)
-- Student management 
-- Student expulsion (by Principal)
-- Teacher teaches courses 
-- Students take courses 
-- Non-academic staff assigns students to classes & make announcement 
-- School-wide announcements 
-- Interactive menu-driven console system
+The system models a basic school structure including staff roles (Principal, Teacher, Non-Academic Staff), students, applicants, courses, and classes.
+
+It allows;
+- Applicants to be admitted based on age
+- Students to enroll in courses
+- Teachers to teach courses
+- The Principal to admit and to expel students
+- Non-academic staff to assign students to classes and make announcements
+- Users to interact with the system through a menu-driven interface
+
+The project demonstrates practical application of core OOP concepts such as encapsulation, inheritance, abstraction, polymorphism, aggregation, and composition.
 
 # Learning Objective
 
@@ -23,6 +25,16 @@ This project was built to practice and demonstrate mastery of:
 - Clean architecture structure
 - Console-based interaction logic
 - Real-world system modeling
+
+# Features
+- Applicant admission (age-based validation)
+- Student management
+- Student expulsion (by Principal)
+- Teacher teaches courses
+- Students take courses
+- Non-academic staff assigns students to classes & make announcement
+- School-wide announcements
+- Interactive menu-driven console system
 
 # Project Structure
 - Core Abstractions 
