@@ -22,7 +22,7 @@ public class Student extends Person {
         System.out.println("Courses for " + getName() + ":");
 
         for(Course c: courses){
-            System.out.println("- " + getCourseName());
+            System.out.println("- " + c.getCourseName());
         }
     }
 
