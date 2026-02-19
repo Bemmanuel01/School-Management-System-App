@@ -11,6 +11,9 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        Principal principal = new Principal("Mr Benjamine", 42, 1);
+        Teacher teacher = new Teacher("Mr Manuel", 42, 2);
+
         List<Student> students = new ArrayList<>();
 
         int choice = 0;
@@ -27,7 +30,90 @@ public class Main {
             System.out.println("8. Make Announcement");
             System.out.println("9. Exit");
             System.out.print("Choose option: ");
-            
+
+            choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice){
+                case 1:
+                    System.out.println("Name: ");
+                    String name = scanner.nextLine();
+
+                    System.out.println("Age: ");
+                    int age = scanner.nextInt();
+
+                    System.out.println("Id: ");
+                    int id = scanner.nextInt();
+                    scanner.nextLine();
+
+                    Applicant applicant = new Applicant(name, age, id);
+                    Student admitted = principal.admitStudent(applicant);
+
+                    if (admitted != null){
+                        students.add(admitted);
+                    }
+                    break;
+
+                case 2:
+                    for (Student s : students) {
+                        System.out.println(s.getName() + " | ID: " + s.getId());
+                    }
+                    break;
+
+                case 3:
+                    System.out.print("Enter Student ID to expel: ");
+                    int expelId = scanner.nextInt();
+                    scanner.nextLine();
+
+                    Student toRemove = null;
+
+                    for (Student s : students) {
+                        if (s.getId() == expelId) {
+                            toRemove = s;
+                            break;
+                        }
+                    }
+
+                    if (toRemove != null) {
+                        principal.expelStudent(toRemove, students);
+                    } else {
+                        System.out.println("Student not found.");
+                    }
+                    break;
+
+                case 4:
+                    System.out.print("Enter Course Name: ");
+                    String teachCourse = scanner.nextLine();
+                    teacher.teachCourse(new Course(teachCourse));
+                    break;
+
+                case 5:
+                    System.out.print("Enter Student ID: ");
+                    int studentId = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.print("Enter Course Name: ");
+                    String courseName = scanner.nextLine();
+
+                    for (Student s : students) {
+                        if (s.getId() == studentId) {
+                            s.takeCourse(new Course(courseName));
+                        }
+                    }
+                    break;
+
+                case 6:
+                    System.out.print("Enter Student ID: ");
+                    int assignId = scanner.nextInt();
+                    scanner.nextLine();
+
+                    for (Student s : students) {
+                        if (s.getId() == assignId) {
+                            admin.assignStudentToClass(s, primaryOne);
+                        }
+                    }
+                    break;
+            }
 
         } while (choice != 9);
         scanner.close();
